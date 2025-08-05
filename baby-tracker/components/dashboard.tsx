@@ -30,21 +30,16 @@ export default function Dashboard() {
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true)
-    
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const stored = localStorage.getItem("babyActivities")
       if (stored) {
-        try {
-          const parsedActivities = JSON.parse(stored)
-          setActivities(parsedActivities)
-          calculateTodayStats(parsedActivities)
-        } catch (error) {
-          console.error('Error parsing stored activities:', error)
-        }
+        const parsedActivities = JSON.parse(stored)
+        setActivities(parsedActivities)
+        calculateTodayStats(parsedActivities)
       }
     }
   }, [])
+  
 
   const calculateTodayStats = (activities: Activity[]) => {
     const today = format(new Date(), "yyyy-MM-dd")
