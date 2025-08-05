@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Button, type ButtonProps } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Baby, Milk, Clock, FileText } from "lucide-react"
 import Link from "next/link"
 import { format } from "date-fns"
 import { QuickActions } from "@/components/quick-actions"
+
 
 interface Activity {
   id: string
